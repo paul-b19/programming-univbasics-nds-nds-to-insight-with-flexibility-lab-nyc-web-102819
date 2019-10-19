@@ -106,7 +106,7 @@ def movies_with_directors_set(source)
   index = 0 
   while index < source.count do 
     dir = {source[index][:director_name] => source[index][:movies]}
-    aoh_movies_by_dir[] << dir 
+    aoh_movies_by_dir << dir 
     index += 1 
   end
   pp aoh_movies_by_dir
