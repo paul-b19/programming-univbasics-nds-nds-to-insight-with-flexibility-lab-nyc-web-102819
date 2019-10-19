@@ -57,7 +57,7 @@ def movies_with_director_key(name, movies_collection)
     aoh_dir_plus_movies << movie_with_director_name(name, movie_data)
     index += 1 
   end
-  pp aoh_dir_plus_movies
+  # pp aoh_dir_plus_movies
   aoh_dir_plus_movies
 end
 
@@ -74,6 +74,19 @@ def gross_per_studio(collection)
   #
   # Hash whose keys are the studio names and whose values are the sum
   # total of all the worldwide_gross numbers for every movie in the input Hash
+  hash_studios_profit = {}
+  index = 0 
+  while index < collection.length do 
+    item = collection[index]
+    if !hash_studios_profit[item[:studio]]
+      hash_studios_profit[item[:studio]] = item[:worldwide_gross]
+    else 
+      hash_studios_profit[item[:studio]] += item[:worldwide_gross]
+    end
+    index += 1 
+  end
+  pp hash_studios_profit
+  hash_studios_profit
 end
 
 def movies_with_directors_set(source)
