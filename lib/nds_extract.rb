@@ -85,7 +85,7 @@ def gross_per_studio(collection)
     end
     index += 1 
   end
-  pp hash_studios_profit
+  # pp hash_studios_profit
   hash_studios_profit
 end
 
