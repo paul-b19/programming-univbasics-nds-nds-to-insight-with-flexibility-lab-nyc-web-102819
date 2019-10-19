@@ -101,7 +101,7 @@ def movies_with_directors_set(source)
   #
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
-  
+  pp source
   aoh_movies_by_dir = []
   index = 0 
   while index < source.count do 
@@ -109,7 +109,7 @@ def movies_with_directors_set(source)
     aoh_movies_by_dir << dir 
     index += 1 
   end
-  pp aoh_movies_by_dir
+  # pp aoh_movies_by_dir
   aoh_movies_by_dir
 end
 
