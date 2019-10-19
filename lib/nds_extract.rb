@@ -57,7 +57,7 @@ def movies_with_director_key(name, movies_collection)
     aoh_dir_plus_movies << movie_with_director_name(name, movie_data)
     index += 1 
   end
-  pp aoh_dir_plus_movies
+  # pp aoh_dir_plus_movies
   aoh_dir_plus_movies
 end
 
@@ -107,12 +107,14 @@ def movies_with_directors_set(source)
   while index < source.count do 
     name = source[index][:director_name]
     movies_collection = source[index][:movies]
-    aoh_one_dir = 
+    aoh_one_dir = movies_with_director_key(name, movies_collection)
+    aoh_movies_with_dir << aoh_one_dir
     
+  end
     
     index += 1 
   end
-  # pp aoh_movies_with_dir
+  pp aoh_movies_with_dir
   aoh_movies_with_dir
 end
 
