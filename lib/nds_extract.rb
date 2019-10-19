@@ -57,7 +57,7 @@ def movies_with_director_key(name, movies_collection)
     aoh_dir_plus_movies << movie_with_director_name(name, movie_data)
     index += 1 
   end
-  # pp aoh_dir_plus_movies
+  pp aoh_dir_plus_movies
   aoh_dir_plus_movies
 end
 
@@ -101,16 +101,19 @@ def movies_with_directors_set(source)
   #
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
-  pp source
-  aoh_movies_by_dir = []
+  
+  aoh_movies_with_dir = []
   index = 0 
   while index < source.count do 
-    dir = {source[index][:director_name] => source[index][:movies]}
-    aoh_movies_by_dir << dir 
+    name = source[index][:director_name]
+    movies_collection = source[index][:movies]
+    aoh_one_dir = 
+    
+    
     index += 1 
   end
-  # pp aoh_movies_by_dir
-  aoh_movies_by_dir
+  # pp aoh_movies_with_dir
+  aoh_movies_with_dir
 end
 
 # ----------------    End of Your Code Region --------------------
