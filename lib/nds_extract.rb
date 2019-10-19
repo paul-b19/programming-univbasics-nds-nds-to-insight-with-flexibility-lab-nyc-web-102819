@@ -74,6 +74,7 @@ def gross_per_studio(collection)
   #
   # Hash whose keys are the studio names and whose values are the sum
   # total of all the worldwide_gross numbers for every movie in the input Hash
+  
   hash_studios_profit = {}
   index = 0 
   while index < collection.length do 
@@ -100,6 +101,13 @@ def movies_with_directors_set(source)
   #
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
+  
+  aoa_movies_by_dir = []
+  outer_index = 0 
+  while outer_index < source.count do 
+    aoh_dir_movies = []
+    movie = {}
+    
 end
 
 # ----------------    End of Your Code Region --------------------
