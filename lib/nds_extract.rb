@@ -104,7 +104,7 @@ def movies_with_directors_set(source)
   
   aoh_movies_by_dir = []
   index = 0 
-  while outer_index < source.count do 
+  while index < source.count do 
     dir = {source[index][:director_name] => source[index][:movies]}
     aoh_movies_by_dir[] << dir 
     index += 1 
