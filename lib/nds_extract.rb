@@ -109,10 +109,8 @@ def movies_with_directors_set(source)
     movies_collection = source[index][:movies]
     aoh_one_dir = movies_with_director_key(name, movies_collection)
     aoh_movies_with_dir << aoh_one_dir
+    index += 1 
     
-  end
-    
-  index += 1 
   end
   pp aoh_movies_with_dir
   aoh_movies_with_dir
