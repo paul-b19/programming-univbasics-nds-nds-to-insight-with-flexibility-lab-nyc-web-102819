@@ -1,5 +1,6 @@
 # Provided, don't edit
 require 'directors_database'
+require 'pp'
 
 # A method we're giving you. This "flattens"  Arrays of Arrays so: [[1,2],
 # [3,4,5], [6]] => [1,2,3,4,5,6].
@@ -48,6 +49,16 @@ def movies_with_director_key(name, movies_collection)
   # Array of Hashes where each Hash represents a movie; however, they should all have a
   # :director_name key. This addition can be done by using the provided
   # movie_with_director_name method
+  
+  aoh_dir_plus_movies = []
+  index = 0 
+  while index < movies_collection.length do
+    movie_data = movies_collection[index]
+    aoh_dir_plus_movies << movie_with_director_name(name, movie_data)
+    index += 1 
+  end
+  # pp aoh_dir_plus_movies
+  aoh_dir_plus_movies
 end
 
 
@@ -63,6 +74,20 @@ def gross_per_studio(collection)
   #
   # Hash whose keys are the studio names and whose values are the sum
   # total of all the worldwide_gross numbers for every movie in the input Hash
+  
+  hash_studios_profit = {}
+  index = 0 
+  while index < collection.length do 
+    item = collection[index]
+    if !hash_studios_profit[item[:studio]]
+      hash_studios_profit[item[:studio]] = item[:worldwide_gross]
+    else 
+      hash_studios_profit[item[:studio]] += item[:worldwide_gross]
+    end
+    index += 1 
+  end
+  # pp hash_studios_profit
+  hash_studios_profit
 end
 
 def movies_with_directors_set(source)
@@ -76,6 +101,18 @@ def movies_with_directors_set(source)
   #
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
+  
+  aoh_movies_with_dir = []
+  index = 0 
+  while index < source.count do 
+    name = source[index][:name]
+    movies_collection = source[index][:movies]
+    aoh_one_dir = movies_with_director_key(name, movies_collection)
+    aoh_movies_with_dir << aoh_one_dir
+    index += 1 
+  end
+  # pp aoh_movies_with_dir
+  aoh_movies_with_dir
 end
 
 # ----------------    End of Your Code Region --------------------
